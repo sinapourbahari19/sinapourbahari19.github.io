@@ -1,0 +1,992 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Sina Pourbahari</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: one left-aligned column (max 1120px). Colour system = temper colours of steel (straw, bronze, purple, blue) plus flame-test hues, one colour per expertise area, carried through every section. Signature pieces: microscope with etch modes, interactive periodic table of worked elements, area filter that highlights matching work page-wide. */
+:root{
+  --bg:#f3f5f8;
+  --surface:#ffffff;
+  --ink:#10151f;
+  --muted:#566173;
+  --line:#d8dde6;
+  --grid:#e2e6ed;
+  --accent:#2d58c4;
+  --accent-soft:#e3e9fb;
+  --ok:#2fa36b;
+  /* one colour per area */
+  --metals:#2d58c4;
+  --coatings:#7a3fae;
+  --battery:#c42d52;
+  --charac:#0b7f7a;
+  --lab:#a3561f;
+  --lead:#946500;
+  /* micrograph + illustration */
+  --grain-1:#b9c2d1;
+  --grain-2:#eef1f6;
+  --gb:#1f2735;
+  --melt:#f7d9a8;
+  --particle:#2d3646;
+  --steel:#a7b0be;
+  --steel-hi:#d6dce5;
+  --handle:#1d2431;
+  /* dark bands (dark in both themes) */
+  --band:#10151f;
+  --band-ink:#eef1f6;
+  --band-muted:#a9b3c4;
+  --band-line:#2a3446;
+  --band-card:#171e2b;
+  --b-metals:#8aa4ff;--b-coatings:#c39af0;--b-battery:#ff8aa3;--b-charac:#4fd1c5;--b-lab:#e8a06a;--b-lead:#e8c15a;
+  --temper:linear-gradient(90deg,#f0d896 0%,#d9a441 17%,#a8642c 34%,#7e3f9a 52%,#2a3f9e 70%,#4f8fd6 86%,#9aa6b6 100%);
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0d1118;--surface:#141a24;--ink:#e7ebf2;--muted:#97a2b4;--line:#253042;--grid:#161d29;--accent:#8aa4ff;--accent-soft:#1a2341;
+    --metals:#8aa4ff;--coatings:#c39af0;--battery:#ff8aa3;--charac:#4fd1c5;--lab:#e8a06a;--lead:#e8c15a;
+    --grain-1:#26303f;--grain-2:#4b5770;--gb:#07090e;--melt:#6b4a1f;--particle:#aab5ca;--steel:#4a5568;--steel-hi:#6d798f;--handle:#8e9ab0;
+    --band:#1a2231;--band-line:#2c3850;--band-card:#212b3d;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0d1118;--surface:#141a24;--ink:#e7ebf2;--muted:#97a2b4;--line:#253042;--grid:#161d29;--accent:#8aa4ff;--accent-soft:#1a2341;
+  --metals:#8aa4ff;--coatings:#c39af0;--battery:#ff8aa3;--charac:#4fd1c5;--lab:#e8a06a;--lead:#e8c15a;
+  --grain-1:#26303f;--grain-2:#4b5770;--gb:#07090e;--melt:#6b4a1f;--particle:#aab5ca;--steel:#4a5568;--steel-hi:#6d798f;--handle:#8e9ab0;
+  --band:#1a2231;--band-line:#2c3850;--band-card:#212b3d;color-scheme:dark;
+}
+[data-c="metals"]{--c:var(--metals);--bc:var(--b-metals)}
+[data-c="coatings"]{--c:var(--coatings);--bc:var(--b-coatings)}
+[data-c="battery"]{--c:var(--battery);--bc:var(--b-battery)}
+[data-c="charac"]{--c:var(--charac);--bc:var(--b-charac)}
+[data-c="lab"]{--c:var(--lab);--bc:var(--b-lab)}
+[data-c="lead"]{--c:var(--lead);--bc:var(--b-lead)}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+svg{display:block}
+button{font:inherit}
+
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+@media (min-width:720px){.wrap{padding-left:max(32px, env(safe-area-inset-left, 0px));padding-right:max(32px, env(safe-area-inset-right, 0px))}}
+
+/* filter dimming */
+[data-d]{transition:opacity .25s, filter .25s}
+.dim{opacity:.22;filter:grayscale(1)}
+@media (prefers-reduced-motion: reduce){[data-d]{transition:none}}
+
+/* header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:10;background:var(--bg)}
+.top{position:sticky;top:env(safe-area-inset-top, 0px);z-index:9;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:56px}
+.progress{position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--temper);transform-origin:0 50%;transform:scaleX(0)}
+.mark{display:flex;align-items:center;gap:10px;font-family:var(--display);font-stretch:125%;font-weight:800;font-size:15px;letter-spacing:.02em;text-decoration:none;text-transform:uppercase}
+.mark i{font-style:normal;display:grid;place-items:center;width:28px;height:28px;border:1.5px solid var(--ink);border-radius:3px;font-size:12px;font-stretch:100%;color:var(--accent)}
+.nav{display:flex;gap:20px;list-style:none;margin:0;padding:0}
+.nav a{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-decoration:none;letter-spacing:.02em}
+.nav a:hover{color:var(--ink)}
+@media (max-width:860px){.nav{display:none}}
+
+/* hero */
+.hero-band{position:relative;overflow:hidden;background-color:var(--bg);background-image:linear-gradient(var(--grid) 1px, transparent 1px),linear-gradient(90deg, var(--grid) 1px, transparent 1px);background-size:28px 28px;background-position:-1px -1px}
+.hero-band::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--temper)}
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:center;padding-block:64px 80px}
+@media (max-width:900px){.hero{grid-template-columns:1fr;gap:40px;padding-block:44px 60px}}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 18px;display:inline-block;background:var(--bg);padding:2px 0}
+.hero-text{min-width:0;container-type:inline-size;position:relative;z-index:1}
+h1{font-family:var(--display);font-stretch:125%;font-weight:800;font-size:clamp(1.9rem, 5vw, 5rem);font-size:clamp(1.9rem, 10.8cqi, 5rem);line-height:.95;letter-spacing:-.015em;margin:0;text-wrap:balance;text-transform:uppercase}
+h1 .sub{display:block;font-stretch:75%;font-weight:400;letter-spacing:0;font-size:.6em;line-height:1.15;margin-top:12px}
+h1 .sub em{font-style:normal;white-space:nowrap;color:var(--c)}
+h1 .sub i{font-style:normal;color:var(--line)}
+.lede{font-size:clamp(1.05rem, 2vw, 1.22rem);line-height:1.55;max-width:46ch;margin:26px 0 0;text-wrap:pretty;background:color-mix(in srgb, var(--bg) 80%, transparent)}
+.status{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0;padding:0;list-style:none;font-family:var(--mono);font-size:12.5px;color:var(--ink)}
+.status li{display:flex;align-items:center;gap:8px;padding:5px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px color-mix(in srgb, var(--ok) 25%, transparent)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--body);font-weight:600;font-size:15px;padding:11px 18px;border-radius:6px;text-decoration:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);transition:border-color .15s, background .15s, transform .15s;cursor:pointer}
+.btn:hover{border-color:var(--ink);transform:translateY(-1px)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.btn.primary:hover{background:color-mix(in srgb, var(--accent) 86%, var(--ink))}
+.btn svg{width:16px;height:16px}
+
+/* microscope */
+.micro{margin:0;display:grid;gap:12px;max-width:470px;width:100%;justify-self:end}
+@media (max-width:900px){.micro{justify-self:start;max-width:430px}}
+.scope{position:relative;aspect-ratio:1;max-width:100%;border-radius:50%;padding:10px;background:var(--surface);border:1px solid var(--line);box-shadow:0 24px 60px -30px color-mix(in srgb, var(--ink) 45%, transparent)}
+.scope canvas{width:100%;height:100%;border-radius:50%;display:block;background:var(--melt)}
+.scope .ring{position:absolute;inset:10px;border-radius:50%;box-shadow:inset 0 0 0 1px color-mix(in srgb, var(--ink) 20%, transparent), inset 0 0 44px color-mix(in srgb, var(--ink) 30%, transparent);pointer-events:none}
+.scale{position:absolute;left:22%;bottom:18%;display:grid;gap:3px;font-family:var(--mono);font-size:11px;color:#fff;text-shadow:0 1px 2px #000;pointer-events:none}
+.scale i{display:block;width:64px;height:4px;background:#fff;box-shadow:0 1px 2px #000}
+.replay{position:absolute;right:3%;bottom:5%;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;display:grid;place-items:center}
+.replay:hover{border-color:var(--ink)}
+.replay svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.modes{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.mode{font-family:var(--mono);font-size:12px;padding:6px 11px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.mode i{width:10px;height:10px;border-radius:50%;background:var(--sw);display:block}
+.mode[aria-pressed="true"]{border-color:var(--ink);color:var(--ink);font-weight:500}
+.micro figcaption{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:center;min-height:2.6em}
+
+/* numbers band */
+.numbers{background:var(--band);color:var(--band-ink)}
+.numbers .wrap{display:grid;grid-template-columns:repeat(4, minmax(0,1fr));padding-block:34px}
+@media (max-width:760px){.numbers .wrap{grid-template-columns:repeat(2, minmax(0,1fr));row-gap:28px}}
+.num{padding-inline:20px;border-left:1px solid var(--band-line);min-width:0}
+.num:first-child{border-left:0;padding-left:0}
+@media (max-width:760px){.num:nth-child(3){border-left:0;padding-left:0}}
+.num b{display:block;font-family:var(--display);font-stretch:118%;font-weight:800;font-size:clamp(2rem, 4.4vw, 3rem);line-height:1;font-variant-numeric:tabular-nums;color:var(--bc)}
+.num span{display:block;margin-top:8px;font-size:13.5px;line-height:1.4;color:var(--band-muted)}
+
+/* sections */
+section{padding-block:72px;border-top:1px solid var(--line)}
+section.alt{background:var(--surface)}
+.sec-head{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;margin-bottom:40px;align-items:baseline}
+@media (max-width:760px){.sec-head{grid-template-columns:1fr;gap:6px}}
+.k{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.sec-head .k::before{content:"";display:inline-block;width:9px;height:9px;background:var(--c, var(--accent));margin-right:10px;vertical-align:0;transform:rotate(45deg)}
+h2{font-family:var(--display);font-stretch:118%;font-weight:750;font-size:clamp(1.7rem, 4vw, 2.5rem);line-height:1.05;letter-spacing:-.01em;margin:0;text-wrap:balance}
+.intro{max-width:68ch;margin:-12px 0 28px;color:var(--muted)}
+
+/* expertise */
+.domains{display:grid;grid-template-columns:repeat(3, minmax(0,1fr));gap:14px}
+@media (max-width:900px){.domains{grid-template-columns:repeat(2, minmax(0,1fr))}}
+@media (max-width:560px){.domains{grid-template-columns:1fr}}
+.domain{position:relative;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:22px 20px 20px;display:grid;align-content:start;gap:10px;min-width:0;transition:border-color .2s, transform .2s, box-shadow .2s, opacity .25s, filter .25s;overflow:hidden}
+.domain::before{content:"";position:absolute;right:-40px;top:-40px;width:120px;height:120px;border-radius:50%;background:color-mix(in srgb, var(--c) 10%, transparent);pointer-events:none}
+.domain:hover{border-color:var(--c);transform:translateY(-2px);box-shadow:0 18px 40px -28px var(--c)}
+.domain.on{border-color:var(--c);box-shadow:0 0 0 2px var(--c)}
+.icon{width:52px;height:52px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb, var(--c) 14%, var(--surface));color:var(--c);margin-bottom:6px}
+.icon svg{width:36px;height:36px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.icon svg .f{fill:currentColor;stroke:none}
+.domain h3{font-family:var(--display);font-stretch:112%;font-weight:700;font-size:1.15rem;line-height:1.2;margin:0}
+.domain p{margin:0;font-size:14.5px;line-height:1.55;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:4px 0 0;padding:0}
+.tags li{font-family:var(--mono);font-size:11.5px;padding:3px 8px;border:1px solid var(--line);border-radius:4px;background:var(--surface);color:var(--ink);white-space:nowrap}
+.domain .tags li{border-color:color-mix(in srgb, var(--c) 35%, var(--line))}
+.show{justify-self:start;margin-top:6px;background:none;border:0;padding:4px 0;color:var(--c);font-weight:600;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}
+.show svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* focus bar */
+.focusbar{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom, 0px));transform:translateX(-50%);z-index:20;display:flex;align-items:center;gap:12px;padding:8px 8px 8px 16px;border-radius:999px;background:var(--band);color:var(--band-ink);box-shadow:0 12px 30px -10px rgba(0,0,0,.45);font-size:14px;max-width:calc(100% - 32px)}
+.focusbar[hidden]{display:none}
+.focusbar i{width:10px;height:10px;border-radius:50%;background:var(--bc);flex:none}
+.focusbar span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.focusbar button{border:0;border-radius:999px;padding:6px 12px;background:var(--band-card);color:var(--band-ink);cursor:pointer;font-size:13px;flex:none}
+
+/* projects */
+.projects{display:grid;gap:72px}
+.project{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px}
+@media (max-width:760px){.project{grid-template-columns:1fr;gap:10px}}
+.meta{font-family:var(--mono);font-size:13px;color:var(--muted);line-height:1.6;display:grid;align-content:start;gap:2px}
+.meta .no{font-family:var(--display);font-stretch:125%;font-weight:800;font-size:46px;line-height:1;color:color-mix(in srgb, var(--c) 30%, var(--bg));margin-bottom:8px}
+.meta .area{color:var(--c);font-weight:500}
+.project h3{font-family:var(--display);font-stretch:112%;font-weight:700;font-size:clamp(1.3rem, 2.6vw, 1.65rem);line-height:1.15;margin:0 0 10px;text-wrap:balance}
+.project .body{max-width:68ch;margin:0 0 22px}
+.project ul{margin:22px 0 0;padding-left:1.1em;max-width:68ch;display:grid;gap:6px}
+.project li::marker{color:var(--c)}
+.visual{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:14px;align-items:stretch}
+@media (max-width:760px){.visual{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0;display:grid;gap:8px;align-content:start;margin:0}
+.panel figcaption{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.figs{display:grid;gap:12px;align-content:start}
+.fig{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px 12px 12px;min-width:0}
+.el,.sym{width:66px;height:66px;border:1.5px solid var(--c);border-radius:4px;display:grid;grid-template-rows:auto 1fr auto;padding:4px 6px;font-family:var(--mono);font-size:9.5px;line-height:1.2;background:color-mix(in srgb, var(--c) 10%, var(--surface));color:var(--ink)}
+.el b{font-family:var(--display);font-stretch:100%;font-weight:700;font-size:25px;line-height:1;align-self:center;justify-self:center;color:var(--c)}
+.el .n{justify-self:start}
+.el .m{justify-self:center;color:var(--muted)}
+.sym{border-style:dashed;place-items:center;grid-template-rows:1fr}
+.sym b{font-family:var(--display);font-stretch:100%;font-weight:700;font-size:20px;line-height:1;color:var(--c)}
+.fig .v{font-family:var(--display);font-stretch:112%;font-weight:700;font-size:26px;line-height:1;color:var(--c);font-variant-numeric:tabular-nums}
+.fig .d{margin:4px 0 0;font-size:13.5px;line-height:1.4;color:var(--muted)}
+.svgbox{overflow-x:auto}
+.svgbox svg{width:100%;height:auto;min-width:300px}
+.mini{aspect-ratio:16/10;max-width:100%;width:100%;border-radius:6px;display:block;background:var(--melt)}
+
+/* process flow */
+.flow{display:grid;grid-template-columns:repeat(4, minmax(0,1fr));gap:10px;margin:14px 0 0;list-style:none;padding:0}
+@media (max-width:760px){.flow{grid-template-columns:1fr 1fr}}
+.step{position:relative;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);min-width:0;display:grid;gap:6px;align-content:start}
+.step svg{width:30px;height:30px;fill:none;stroke:var(--c);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.step svg .f{fill:var(--c);stroke:none}
+.step:not(:last-child)::after{content:"";position:absolute;right:-9px;top:50%;width:8px;height:8px;border-top:1.5px solid var(--muted);border-right:1.5px solid var(--muted);transform:translateY(-50%) rotate(45deg)}
+@media (max-width:760px){.step::after{display:none}}
+.step:last-child{background:color-mix(in srgb, var(--c) 10%, var(--surface));border-color:color-mix(in srgb, var(--c) 40%, var(--line))}
+.step .i{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.step h4{font-family:var(--display);font-stretch:110%;font-weight:700;font-size:.98rem;margin:0;line-height:1.2}
+.step p{margin:0;font-size:13px;line-height:1.45;color:var(--muted)}
+
+/* periodic table */
+.pt-wrap{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:20px;align-items:start}
+@media (max-width:900px){.pt-wrap{grid-template-columns:1fr}}
+.pt-wrap > *{min-width:0}
+.pt-scroll{overflow-x:auto;padding-bottom:6px}
+.ptable{display:grid;grid-template-columns:repeat(18, minmax(28px,1fr));gap:3px;min-width:560px}
+.cell{aspect-ratio:1;border-radius:4px;display:grid;place-items:center;font-family:var(--mono);font-size:10.5px;color:color-mix(in srgb, var(--muted) 55%, transparent);border:1px solid var(--grid);background:transparent;padding:0;position:relative;min-width:0}
+button.cell{cursor:pointer;color:var(--c);font-weight:500;font-size:12.5px;font-family:var(--display);font-stretch:100%;border:1.5px solid var(--c);background:color-mix(in srgb, var(--c) 14%, var(--surface));transition:transform .15s, background .15s}
+button.cell small{position:absolute;left:3px;top:1px;font-family:var(--mono);font-size:7.5px;color:var(--muted);font-weight:400}
+button.cell:hover,button.cell[aria-pressed="true"]{transform:scale(1.18);z-index:2;background:var(--c);color:var(--surface)}
+button.cell[aria-pressed="true"] small,button.cell:hover small{color:var(--surface)}
+.pt-legend{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0 0;padding:0;list-style:none;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.pt-legend li{display:flex;align-items:center;gap:7px}
+.pt-legend i{width:12px;height:12px;border-radius:3px;background:var(--c);display:block}
+.pt-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;gap:12px;align-content:start;min-width:0}
+section.alt .pt-card{background:var(--bg)}
+.pt-card .big{width:110px;height:110px;border:2px solid var(--c);border-radius:6px;background:color-mix(in srgb, var(--c) 12%, var(--surface));display:grid;grid-template-rows:auto 1fr auto;padding:6px 9px;font-family:var(--mono);font-size:12px}
+.pt-card .big b{font-family:var(--display);font-stretch:100%;font-weight:800;font-size:44px;line-height:1;align-self:center;justify-self:center;color:var(--c)}
+.pt-card .big span:last-child{justify-self:center;color:var(--muted)}
+.pt-card h3{margin:0;font-family:var(--display);font-stretch:112%;font-weight:700;font-size:1.25rem}
+.pt-card p{margin:0;font-size:14.5px;line-height:1.5}
+.chipc{justify-self:start;font-family:var(--mono);font-size:11.5px;padding:3px 9px;border-radius:999px;background:color-mix(in srgb, var(--c) 14%, var(--surface));color:var(--c);border:1px solid color-mix(in srgb, var(--c) 35%, var(--line))}
+
+/* design gallery */
+.gallery{display:grid;grid-template-columns:repeat(3, minmax(0,1fr));grid-auto-rows:210px;grid-auto-flow:dense;gap:14px}
+.shot{position:relative;margin:0;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--bg);min-width:0}
+.shot img{width:100%;height:100%;max-width:100%;object-fit:cover;display:block;transition:transform .4s ease}
+.shot:hover img{transform:scale(1.03)}
+@media (prefers-reduced-motion: reduce){.shot img{transition:none}.shot:hover img{transform:none}}
+.shot figcaption{position:absolute;left:10px;right:10px;bottom:10px;display:grid;gap:2px;background:color-mix(in srgb, var(--surface) 92%, transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:var(--ink);font-size:13.5px;line-height:1.35;padding:9px 11px;border-radius:8px;border:1px solid var(--line)}
+.shot figcaption b{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.shot.wide{grid-column:span 2;grid-row:span 2}
+.shot.tall{grid-row:span 2}
+.shot.note{background:var(--band);border-color:var(--band-line);padding:18px;display:grid;align-content:center;gap:16px}
+.note div b{display:block;font-family:var(--display);font-stretch:118%;font-weight:800;font-size:2rem;line-height:1;color:var(--bc)}
+.note div span{display:block;font-size:13.5px;line-height:1.4;color:var(--band-muted);margin-top:4px}
+@media (max-width:900px){.gallery{grid-template-columns:repeat(2, minmax(0,1fr))}}
+@media (max-width:600px){
+  .gallery{grid-template-columns:1fr;grid-auto-rows:auto}
+  .shot.wide,.shot.tall{grid-column:auto;grid-row:auto}
+  .shot img{height:auto}
+  .shot.tall img{aspect-ratio:4/5}
+}
+
+/* timeline */
+.timeline{position:relative;display:grid;gap:44px}
+.timeline::before{content:"";position:absolute;left:217px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg, var(--coatings), var(--battery) 35%, var(--metals) 70%, var(--lab))}
+.row{position:relative;display:grid;grid-template-columns:200px minmax(0,1fr);gap:36px}
+.row::before{content:"";position:absolute;left:212px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2.5px solid var(--c)}
+.row.now::before{background:var(--c);box-shadow:0 0 0 5px color-mix(in srgb, var(--c) 22%, transparent)}
+@media (max-width:760px){
+  .timeline::before{left:5px}
+  .row{grid-template-columns:1fr;gap:6px;padding-left:30px}
+  .row::before{left:0}
+}
+.when{font-family:var(--mono);font-size:13px;color:var(--muted);line-height:1.5;font-variant-numeric:tabular-nums;display:grid;gap:8px;align-content:start}
+.when em{display:block;font-style:normal;color:var(--c)}
+.dchips{display:flex;flex-wrap:wrap;gap:4px 10px;list-style:none;margin:0;padding:0;font-size:11.5px}
+.dchips li{display:flex;align-items:center;gap:5px;color:var(--c)}
+.dchips li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--c)}
+.row h3{font-family:var(--body);font-weight:600;font-size:1.15rem;line-height:1.3;margin:0}
+.org{color:var(--muted);margin:2px 0 12px;font-size:15px}
+.row ul.pts{margin:0;padding-left:1.1em;max-width:68ch;display:grid;gap:6px}
+.row ul.pts li::marker{color:var(--c)}
+.chip{display:inline-block;font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;padding:2px 8px;border-radius:999px;background:var(--ok);color:#fff;margin-left:8px;vertical-align:2px;white-space:nowrap}
+
+/* tools */
+.toolgrid{display:grid;grid-template-columns:repeat(3, minmax(0,1fr));gap:14px}
+@media (max-width:900px){.toolgrid{grid-template-columns:repeat(2, minmax(0,1fr))}}
+@media (max-width:560px){.toolgrid{grid-template-columns:1fr}}
+.tool{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--bg);min-width:0}
+.tool h3{font-family:var(--mono);font-weight:500;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--c, var(--muted));margin:0 0 12px;display:flex;align-items:center;gap:8px}
+.tool h3::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--c, var(--muted))}
+
+/* education */
+.edu{display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:14px}
+@media (max-width:760px){.edu{grid-template-columns:1fr}}
+.degree{border:1px solid var(--line);border-radius:12px;padding:22px;background:var(--surface);display:grid;gap:8px;align-content:start;min-width:0}
+.degree .lvl{display:inline-grid;place-items:center;width:64px;height:30px;border-radius:4px;background:var(--c);color:var(--surface);font-family:var(--display);font-stretch:112%;font-weight:700;font-size:14px}
+.degree h3{font-family:var(--display);font-stretch:110%;font-weight:700;font-size:1.2rem;line-height:1.2;margin:4px 0 0}
+.degree .org{margin:0}
+.degree ul.pts{margin:4px 0 0;padding-left:1.1em;display:grid;gap:6px;font-size:15px}
+.degree ul.pts li::marker{color:var(--c)}
+.courses{margin:8px 0 0}
+.courses .k{display:block;margin-bottom:8px;font-size:11.5px}
+
+/* contact */
+.contact-band{background:var(--band);color:var(--band-ink);border-top:0;position:relative}
+.contact-band::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:var(--temper)}
+.contact-band h2{color:var(--band-ink)}
+.contact-band .k{color:var(--band-muted)}
+.contact{display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:14px}
+.card{background:var(--band-card);border:1px solid var(--band-line);border-radius:12px;padding:20px;display:grid;gap:8px;min-width:0;align-content:start}
+.card .k{color:var(--bc)}
+.card .v{font-size:1.02rem;font-weight:500;overflow-wrap:anywhere}
+.card .acts{display:flex;flex-wrap:wrap;gap:14px;margin-top:4px}
+.linkbtn{font:inherit;font-size:14px;font-weight:600;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-decoration-color:var(--bc);text-decoration-thickness:2px;text-underline-offset:4px}
+
+footer{background:var(--band);color:var(--band-muted);border-top:1px solid var(--band-line);padding-block:24px calc(36px + env(safe-area-inset-bottom, 0px));font-family:var(--mono);font-size:12.5px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top"><i aria-hidden="true">SP</i>Sina Pourbahari</a>
+    <ul class="nav">
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#elements">Elements</a></li>
+      <li><a href="#design">Design</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+  <span class="progress" id="progress" aria-hidden="true"></span>
+</header>
+
+<main id="top">
+  <div class="hero-band">
+    <div class="wrap hero">
+      <div class="hero-text">
+        <p class="eyebrow">Materials &amp; Metallurgical Engineer · Project Lead</p>
+        <h1>Sina Pourbahari <span class="sub"><em data-c="metals">Metals <i>·</i></em> <em data-c="coatings">Coatings <i>·</i></em> <em data-c="battery">Battery materials <i>·</i></em> <em data-c="charac">Testing</em></span></h1>
+        <p class="lede">I work across the materials lifecycle, from casting and heat treatment to coatings and recycling. When a material or a project fails, I find the root cause, explain it to the people who decide, and lead the team that moves it forward.</p>
+        <ul class="status">
+          <li><span class="dot" aria-hidden="true"></span>Available from February 2027</li>
+          <li>Milan, Italy</li>
+          <li>Open to travel across Europe</li>
+        </ul>
+        <div class="actions">
+          <a class="btn primary" href="#contact">Get in touch</a>
+          <a class="btn" href="Sina_Pourbahari_CV.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M3 13h10"/></svg>CV (PDF)</a>
+          <a class="btn" href="https://www.linkedin.com/in/sina-pourbahari-490498215" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <figure class="micro">
+        <div class="scope">
+          <canvas id="hero-micro" width="520" height="520" aria-label="Animated schematic of a metal microstructure under a microscope"></canvas>
+          <span class="ring" aria-hidden="true"></span>
+          <span class="scale" aria-hidden="true"><i></i>50 µm</span>
+          <button class="replay" type="button" id="replay" aria-label="Solidify again"><svg viewBox="0 0 20 20"><path d="M16 10a6 6 0 1 1-1.8-4.3M16 3v3.5h-3.5"/></svg></button>
+        </div>
+        <div class="modes" role="group" aria-label="Microscope view">
+          <button class="mode" type="button" data-mode="bright" aria-pressed="true" style="--sw:#b9c2d1"><i></i>Bright field</button>
+          <button class="mode" type="button" data-mode="tint" aria-pressed="false" style="--sw:linear-gradient(90deg,#d9a441,#7e3f9a,#2a3f9e)"><i style="background:linear-gradient(90deg,#d9a441,#7e3f9a,#2a3f9e)"></i>Color etch</button>
+          <button class="mode" type="button" data-mode="annealed" aria-pressed="false" style="--sw:#a8642c"><i></i>Annealed</button>
+          <button class="mode" type="button" data-mode="reinforced" aria-pressed="false" style="--sw:#2d3646"><i></i>Reinforced</button>
+        </div>
+        <figcaption id="micro-cap">Bright field: grains nucleate and grow as the melt solidifies. Schematic.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="numbers" aria-label="Key figures">
+    <div class="wrap">
+      <div class="num" data-c="metals"><b>200+</b><span>mechanical tests on Mg alloys and composites</span></div>
+      <div class="num" data-c="coatings"><b>16</b><span>coating challenges mapped, each with a fix</span></div>
+      <div class="num" data-c="battery"><b>~70%</b><span>lithium recovered from spent cathodes, acid-free</span></div>
+      <div class="num" data-c="lead"><b>8</b><span>countries recruited from for a team of 5</span></div>
+    </div>
+  </div>
+
+  <section id="expertise" class="alt">
+    <div class="wrap">
+      <div class="sec-head" data-c="metals"><span class="k">Expertise</span><h2>Six areas I work in</h2></div>
+      <p class="intro">Each area has its own colour across the page. Pick one to highlight the matching projects, roles and elements.</p>
+      <div class="domains">
+        <article class="domain" data-c="metals" data-d="metals">
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M8 13 20 7l12 6v14l-12 6-12-6Z M8 13l12 6 12-6M20 19v14"/><circle class="f" cx="8" cy="13" r="2.3"/><circle class="f" cx="20" cy="7" r="2.3"/><circle class="f" cx="32" cy="13" r="2.3"/><circle class="f" cx="32" cy="27" r="2.3"/><circle class="f" cx="20" cy="33" r="2.3"/><circle class="f" cx="8" cy="27" r="2.3"/><circle class="f" cx="20" cy="19" r="2.3"/></svg></div>
+          <h3>Metals and alloys</h3>
+          <p>Physical metallurgy, casting and heat treatment. Mg alloys and metal-matrix composites, and heat treatment effects on copper hardness and conductivity.</p>
+          <ul class="tags"><li>Casting</li><li>Stir casting</li><li>Heat treatment</li><li>Mg alloys</li><li>MMCs</li></ul>
+          <button class="show" type="button" data-focus="metals">Highlight this work <svg viewBox="0 0 14 14"><path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5"/></svg></button>
+        </article>
+        <article class="domain" data-c="coatings" data-d="coatings">
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 40 40"><rect x="5" y="17" width="30" height="16" rx="1"/><path d="M5 22h30M5 26h30"/><path d="M8 33l5-5M14 33l5-5M20 33l5-5M26 33l5-5" stroke-width="1.1"/><path d="M15.5 17a4.5 4.5 0 1 1 9 0"/></svg></div>
+          <h3>Coatings and surfaces</h3>
+          <p>Developing a non-stick coating for food-contact cookware: performance specifications, formulation for toughness, thermal shock tolerance and durability, and diagnosis of coating failures.</p>
+          <ul class="tags"><li>Coating design</li><li>Thermal shock</li><li>Corrosion</li><li>Surface technology</li></ul>
+          <button class="show" type="button" data-focus="coatings">Highlight this work <svg viewBox="0 0 14 14"><path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5"/></svg></button>
+        </article>
+        <article class="domain" data-c="battery" data-d="battery">
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 40 40"><rect x="5" y="12" width="26" height="16" rx="2"/><rect x="31" y="17" width="4" height="6" rx="1"/><path d="M10 16v8M14.5 16v8M19 16v8"/><path d="M23 20h4m-2-2v4" stroke-width="1.4"/></svg></div>
+          <h3>Battery materials</h3>
+          <p>Spent NMC and LCO cathodes. Mechanochemistry and ball milling, deep eutectic solvent formulation, leaching kinetics and metal recovery.</p>
+          <ul class="tags"><li>Li-ion cathodes</li><li>Ball milling</li><li>DES / NADES</li><li>Leaching</li></ul>
+          <button class="show" type="button" data-focus="battery">Highlight this work <svg viewBox="0 0 14 14"><path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5"/></svg></button>
+        </article>
+        <article class="domain" data-c="charac" data-d="charac">
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M6 33h28M6 33V7"/><path d="M8 31h4l1.5-11 1.5 11h4l1-17 1 17h4l1-7 1 7h6"/></svg></div>
+          <h3>Testing and characterization</h3>
+          <p>Hands-on with microscopy, diffraction, spectroscopy and mechanical testing. Microstructure-property correlation, fractography and failure mode analysis.</p>
+          <ul class="tags"><li>SEM/EDS</li><li>XRD</li><li>XRF</li><li>ICP-OES</li><li>NMR</li><li>Wear</li><li>Tensile</li></ul>
+          <button class="show" type="button" data-focus="charac">Highlight this work <svg viewBox="0 0 14 14"><path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5"/></svg></button>
+        </article>
+        <article class="domain" data-c="lab" data-d="lab">
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="17" r="10"/><path d="M20 17l6-5M12 17h2M26 17h2M20 9v2M14.3 11.3l1.4 1.4"/><path d="M18 27v5h4v-5M5 34h30"/></svg></div>
+          <h3>Lab engineering and design</h3>
+          <p>Commissioned a vacuum line and fluorine gas station, restored a decommissioned wear tester, and designed fixtures and molds in SolidWorks for in-house 3D printing.</p>
+          <ul class="tags"><li>Commissioning</li><li>Lab safety</li><li>SolidWorks</li><li>AutoCAD</li><li>FDM printing</li></ul>
+          <button class="show" type="button" data-focus="lab">Highlight this work <svg viewBox="0 0 14 14"><path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5"/></svg></button>
+        </article>
+        <article class="domain" data-c="lead" data-d="lead">
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 20 9 11M20 20l11-9M20 20 9 29M20 20l11 9"/><circle class="f" cx="20" cy="20" r="4"/><circle cx="9" cy="11" r="3"/><circle cx="31" cy="11" r="3"/><circle cx="9" cy="29" r="3"/><circle cx="31" cy="29" r="3"/></svg></div>
+          <h3>Project leadership</h3>
+          <p>Owning R&amp;D projects end to end: scope, brief, task allocation, deadlines and reporting to the CEO. Hiring and leading international teams.</p>
+          <ul class="tags"><li>Planning</li><li>Hiring</li><li>Team leadership</li><li>Reporting</li><li>DOE</li></ul>
+          <button class="show" type="button" data-focus="lead">Highlight this work <svg viewBox="0 0 14 14"><path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5"/></svg></button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head" data-c="coatings"><span class="k">Selected projects</span><h2>Three problems, three material systems</h2></div>
+      <div class="projects">
+
+        <article class="project" data-c="coatings" data-d="coatings lead">
+          <div class="meta"><span class="no" aria-hidden="true">01</span><span class="area">Coatings</span><span>Elihome LLC</span><span>2026</span></div>
+          <div>
+            <h3>Unblocking a stalled non-stick coating</h3>
+            <p class="body">A new coating for food-contact cookware had been stuck for three months. I identified the root cause, explained the underlying mechanism to the manager and the CEO, and the project moved to the next optimisation stage.</p>
+            <div class="visual">
+              <figure class="panel">
+                <div class="svgbox">
+                  <svg viewBox="0 0 440 240" role="img" aria-label="Illustration of a frying pan with a new non-stick coating, labelled new patent">
+                    <defs>
+                      <linearGradient id="coat" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" style="stop-color:var(--surface)"/>
+                        <stop offset="1" style="stop-color:var(--coatings);stop-opacity:.6"/>
+                      </linearGradient>
+                      <marker id="tip" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path style="fill:var(--coatings)" d="M0 0 10 5 0 10Z"/></marker>
+                    </defs>
+                    <rect style="fill:var(--surface)" x="0" y="0" width="440" height="240"/>
+                    <ellipse style="fill:var(--ink)" cx="180" cy="208" rx="146" ry="13" opacity=".08"/>
+                    <path style="fill:var(--handle)" d="M316 112 L424 88 Q433 86 434 94 L435 100 Q436 107 429 108 L320 132 Z"/>
+                    <circle style="fill:var(--steel-hi)" cx="331" cy="118" r="3"/>
+                    <circle style="fill:var(--steel-hi)" cx="345" cy="115" r="3"/>
+                    <path style="fill:var(--steel);stroke:var(--ink)" d="M36 124 C40 172 90 198 180 198 C270 198 320 172 324 124 Z" stroke-width="1.2"/>
+                    <ellipse style="fill:var(--steel-hi);stroke:var(--ink)" cx="180" cy="124" rx="144" ry="46" stroke-width="1.2"/>
+                    <ellipse style="stroke:var(--coatings)" cx="180" cy="128" rx="128" ry="37" fill="url(#coat)" stroke-width="1.8"/>
+                    <path d="M92 118 Q140 100 206 103" fill="none" stroke="#ffffff" stroke-opacity=".75" stroke-width="3.5" stroke-linecap="round"/>
+                    <path d="M120 128 Q150 120 178 120" fill="none" stroke="#ffffff" stroke-opacity=".5" stroke-width="2.5" stroke-linecap="round"/>
+                    <circle style="fill:var(--surface);stroke:var(--coatings)" cx="236" cy="132" r="7.5" stroke-width="1.4"/>
+                    <circle cx="233.5" cy="129.5" r="2" fill="#ffffff"/>
+                    <circle style="fill:var(--surface);stroke:var(--coatings)" cx="258" cy="141" r="4.5" stroke-width="1.2"/>
+                    <path style="stroke:var(--coatings)" d="M86 50 C86 80 100 100 122 116" fill="none" stroke-width="2" marker-end="url(#tip)"/>
+                    <rect style="fill:var(--coatings)" x="18" y="16" width="136" height="30" rx="15"/>
+                    <text style="fill:var(--surface)" x="86" y="36" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" font-weight="600" letter-spacing="1.5">NEW PATENT</text>
+                    <text style="fill:var(--muted)" x="166" y="36" font-family="IBM Plex Mono, monospace" font-size="12">non-stick coating</text>
+                  </svg>
+                </div>
+                <figcaption>Illustration only. Formulation and process are under NDA.</figcaption>
+              </figure>
+              <div class="figs">
+                <div class="fig"><div class="sym" aria-hidden="true"><b>3</b></div><div><div class="v">3 months</div><p class="d">dead end resolved through root cause analysis</p></div></div>
+                <div class="fig"><div class="sym" aria-hidden="true"><b>16</b></div><div><div class="v">16 challenges</div><p class="d">mapped, each with a proposed fix, presented to the CEO</p></div></div>
+              </div>
+            </div>
+            <ul>
+              <li>Researched the engineering specifications the coating must meet for best performance.</li>
+              <li>Worked on the formulation to improve toughness, thermal shock tolerance and mechanical durability.</li>
+              <li>Carried out a research study on PTFE non-stick coatings at the CEO's request.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="project" data-c="battery" data-d="battery charac">
+          <div class="meta"><span class="no" aria-hidden="true">02</span><span class="area">Battery materials</span><span>Politecnico di Milano</span><span>2024 to 2026</span></div>
+          <div>
+            <h3>Recovering lithium and cobalt without strong acids</h3>
+            <p class="body">My M.Sc. thesis: a mechanochemical route for spent Li-ion cathodes using a food-grade natural deep eutectic solvent at room temperature, validated on real Al-contaminated industrial NMC and LCO scrap rather than synthetic powders.</p>
+            <div class="figs" style="grid-template-columns:repeat(auto-fit, minmax(240px, 1fr))">
+              <div class="fig"><div class="el" aria-hidden="true"><span class="n">3</span><b>Li</b><span class="m">6.94</span></div><div><div class="v">~70%</div><p class="d">lithium leached at room temperature</p></div></div>
+              <div class="fig"><div class="el" aria-hidden="true"><span class="n">27</span><b>Co</b><span class="m">58.93</span></div><div><div class="v">~50%</div><p class="d">cobalt leached, no strong acid or toxic waste</p></div></div>
+            </div>
+            <ol class="flow" aria-label="Process route">
+              <li class="step"><svg viewBox="0 0 30 30" aria-hidden="true"><rect x="3" y="8" width="20" height="14" rx="2"/><rect x="23" y="12" width="3" height="6" rx="1"/><path d="M8 12v6M12 12v6"/></svg><span class="i">Step 1</span><h4>Spent cathode</h4><p>Industrial NMC and LCO scrap</p></li>
+              <li class="step"><svg viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="11"/><circle class="f" cx="11" cy="18" r="2.5"/><circle class="f" cx="17" cy="20" r="2.5"/><circle class="f" cx="19" cy="13" r="2.5"/><path d="M15 2.5a12.5 12.5 0 0 1 11 7"/></svg><span class="i">Step 2</span><h4>Ball milling</h4><p>Mechanochemical activation</p></li>
+              <li class="step"><svg viewBox="0 0 30 30" aria-hidden="true"><path d="M11 3h8M12 3v8l-7 13a2 2 0 0 0 2 3h16a2 2 0 0 0 2-3l-7-13V3"/><path d="M8 20h14"/></svg><span class="i">Step 3</span><h4>NADES leaching</h4><p>Room temperature, acid-free</p></li>
+              <li class="step"><svg viewBox="0 0 30 30" aria-hidden="true"><path d="M6 16l6 6 12-13"/></svg><span class="i">Result</span><h4>Li and Co in solution</h4><p>Up to 40% lower CO2 than pyrometallurgy (estimate)</p></li>
+            </ol>
+            <ul>
+              <li>Led 6 experimental campaigns (~30 trials) to map leaching kinetics and optimal molar ratios.</li>
+              <li>Built the first 9-point milling time series for this system, defining the effective process window for scale-up.</li>
+              <li>Characterized feedstock and products by NMR, XRD, XRF, ICP-OES, SEM, EDS and UV-Vis. Manuscript in preparation.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="project" data-c="metals" data-d="metals charac lab">
+          <div class="meta"><span class="no" aria-hidden="true">03</span><span class="area">Metals and alloys</span><span>University of Tehran</span><span>2021 to 2023</span></div>
+          <div>
+            <h3>Wear-resistant magnesium composites</h3>
+            <p class="body">Stir cast Mg-based metal-matrix composites (ZW31 with SiC, AZ91 with B4C), correlating reinforcement content and processing route with microstructure, hardness and tribological response.</p>
+            <div class="visual">
+              <figure class="panel">
+                <canvas class="mini" id="mmc-micro" width="640" height="400" aria-label="Schematic of magnesium matrix grains with ceramic reinforcement particles"></canvas>
+                <figcaption>Schematic: Mg matrix grains with ceramic reinforcement particles</figcaption>
+              </figure>
+              <div class="figs">
+                <div class="fig"><div class="el" aria-hidden="true"><span class="n">12</span><b>Mg</b><span class="m">24.31</span></div><div><div class="v">200+</div><p class="d">wear, tensile, compression and hardness tests with full traceability</p></div></div>
+                <div class="fig"><div class="sym" aria-hidden="true"><b>↻</b></div><div><div class="v">Restored</div><p class="d">a decommissioned wear tester, recalibrated with written procedures</p></div></div>
+              </div>
+            </div>
+            <ul>
+              <li>Rebuilt the wear testing section: restored a decommissioned machine, calibrated it and wrote the procedures.</li>
+              <li>Identified failure modes from fractographic and microstructural evidence (SEM, optical microscopy, XRD).</li>
+              <li>Traced defects and non-conformances back to casting and heat treatment parameters.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="elements" class="alt">
+    <div class="wrap">
+      <div class="sec-head" data-c="battery"><span class="k">My periodic table</span><h2>13 elements I have worked with</h2></div>
+      <p class="intro">From cathode metals to alloying additions and reinforcement ceramics. Tap a highlighted element to see where it came up in my work.</p>
+      <div class="pt-wrap">
+        <div>
+          <div class="pt-scroll"><div class="ptable" id="ptable" aria-label="Periodic table with the elements from my work highlighted"></div></div>
+          <ul class="pt-legend">
+            <li data-c="battery"><i></i>Battery materials</li>
+            <li data-c="metals"><i></i>Metals and alloys</li>
+            <li data-c="lab"><i></i>Lab engineering</li>
+          </ul>
+        </div>
+        <div class="pt-card" id="ptcard" data-c="battery" aria-live="polite">
+          <div class="big"><span id="pt-z">3</span><b id="pt-sym">Li</b><span id="pt-m">6.94</span></div>
+          <h3 id="pt-name">Lithium</h3>
+          <span class="chipc" id="pt-area">Battery materials</span>
+          <p id="pt-note">Leached from spent NMC and LCO cathodes at room temperature, about 70% recovery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="design">
+    <div class="wrap">
+      <div class="sec-head" data-c="lab"><span class="k">Design and 3D printing</span><h2>From CAD model to printed part</h2></div>
+      <p class="intro">Four years designing parts in SolidWorks and printing them on FDM machines: custom lab fixtures, a casting mold prototype and sculpted models. I wrote the lab's printing procedures so the team no longer depended on outside technicians.</p>
+      <div class="gallery">
+        <figure class="shot wide" data-c="lab" data-d="lab">
+          <img src="images/cad-helical-section.jpg" alt="SolidWorks render of a cylindrical part cut in half, showing a conical inlet and helical grooves inside the bore" width="1100" height="719" loading="lazy">
+          <figcaption><b>SolidWorks · CAD</b>Section view: conical inlet and helical internal grooves</figcaption>
+        </figure>
+        <figure class="shot tall" data-c="lab" data-d="lab">
+          <img src="images/fdm-printer.jpg" alt="Green enclosed FDM 3D printer on a desk" width="900" height="1200" loading="lazy">
+          <figcaption><b>Equipment</b>FDM printer used for lab prototypes and fixtures</figcaption>
+        </figure>
+        <figure class="shot tall" data-c="lab" data-d="lab">
+          <img src="images/print-pla-box.jpg" alt="Purple rectangular open box printed in PLA, held in a hand" width="900" height="1200" loading="lazy" style="object-position:50% 70%">
+          <figcaption><b>FDM print · PLA</b>Rectangular prototype printed in PLA</figcaption>
+        </figure>
+        <figure class="shot tall" data-c="lab" data-d="lab">
+          <img src="images/print-pla-skull.jpg" alt="Purple PLA print of a detailed human skull model, held in a hand" width="900" height="1200" loading="lazy">
+          <figcaption><b>FDM print · PLA</b>Detailed sculpted model</figcaption>
+        </figure>
+        <figure class="shot" data-c="lab" data-d="lab">
+          <img src="images/cad-persepolis-relief.jpg" alt="SolidWorks relief model of the Xerxes Palace at Persepolis with the word Shiraz above it" width="945" height="813" loading="lazy" style="object-position:50% 60%">
+          <figcaption><b>SolidWorks · CAD</b>Relief model of the Xerxes Palace, Persepolis</figcaption>
+        </figure>
+        <div class="shot note" data-d="lab lead">
+          <div data-c="lab"><b>~80%</b><span>lower lab tool costs with fixtures I designed and printed in-house</span></div>
+          <div data-c="lead"><b>80</b><span>students taught AutoCAD and SolidWorks as a teaching assistant</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="alt">
+    <div class="wrap">
+      <div class="sec-head" data-c="charac"><span class="k">Experience</span><h2>Where I have worked</h2></div>
+      <div class="timeline">
+        <article class="row now" data-c="coatings" data-d="coatings lead">
+          <div class="when">Aug 2026 to present<em>ends Jan 2027</em><ul class="dchips"><li data-c="coatings">Coatings</li><li data-c="lead">Leadership</li></ul></div>
+          <div>
+            <h3>Innovation Project Lead <span class="chip">Current</span></h3>
+            <p class="org">Elihome LLC · Milan, Italy</p>
+            <ul class="pts">
+              <li>Leading R&amp;D on a new non-stick coating for food-contact cookware: specifications, formulation and failure diagnosis.</li>
+              <li>Own an AI research project at project level: brief, project structure, task allocation, deadlines and reporting to senior management.</li>
+              <li>Built an international team of 5 after ~20 interviews with candidates from 8 European countries.</li>
+              <li>Wrote onboarding handouts for junior team members, which cut errors and scope misunderstandings.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="row" data-c="battery" data-d="battery charac lab">
+          <div class="when">Mar 2025 to Aug 2026<ul class="dchips"><li data-c="battery">Battery</li><li data-c="charac">Testing</li><li data-c="lab">Lab eng.</li></ul></div>
+          <div>
+            <h3>Graduate Researcher</h3>
+            <p class="org">FluoriTech Lab, Politecnico di Milano · Milan, Italy</p>
+            <ul class="pts">
+              <li>Developed an acid-free mechanochemical recycling route for spent Li-ion cathodes: ~70% Li and ~50% Co at room temperature.</li>
+              <li>Co-engineered a new vacuum line and fluorine gas station from commissioning onward, with installation protocols that reduced gas leakage risk.</li>
+              <li>Completed 3 full vacuum pump maintenance and repair cycles, keeping moisture-sensitive experiments stable.</li>
+              <li>Took part in industrial site visits to fluorine production and battery recycling facilities.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="row" data-c="metals" data-d="metals charac lab lead">
+          <div class="when">May 2020 to Sep 2023<ul class="dchips"><li data-c="metals">Metals</li><li data-c="charac">Testing</li><li data-c="lead">Leadership</li></ul></div>
+          <div>
+            <h3>Research Assistant</h3>
+            <p class="org">Solidification and Casting Lab, University of Tehran · Tehran, Iran</p>
+            <ul class="pts">
+              <li>Designed standardized protocols for wear, tensile, compression and hardness testing; ran 200+ tests across several alloy systems.</li>
+              <li>Performed metallography, optical microscopy, SEM and XRD on as-cast and heat-treated samples.</li>
+              <li>Wrote technical reports on properties, microstructure and defects for the research group and external clients.</li>
+              <li>Coordinated schedules, priorities and equipment handovers for a team of 5 researchers.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="row" data-c="lab" data-d="lab">
+          <div class="when">May 2019 to Sep 2023<ul class="dchips"><li data-c="lab">Design</li></ul></div>
+          <div>
+            <h3>3D Printer Operator and CAD Designer</h3>
+            <p class="org">University of Tehran · Tehran, Iran</p>
+            <ul class="pts">
+              <li>Designed and printed custom lab tools in SolidWorks, including a polymer prototype of an ingot casting mold.</li>
+              <li>Ran the full cycle from CAD model to printed part, with fit checks and dimensional verification.</li>
+              <li>Wrote standard procedures for lab 3D printing, removing the need for external technicians.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="row" data-c="metals" data-d="metals lab lead">
+          <div class="when">2021 to 2022<ul class="dchips"><li data-c="metals">Metals</li><li data-c="lab">Design</li></ul></div>
+          <div>
+            <h3>Other experience</h3>
+            <ul class="pts">
+              <li>Intern, Azerakhsh Metallurgy Service Center (2022): heat treatment effects on copper hardness and electrical conductivity; processing-property datasets for client reports.</li>
+              <li>Teaching Assistant, Industrial Drawing, University of Tehran (2021): taught AutoCAD and SolidWorks to 80 students.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="tools">
+    <div class="wrap">
+      <div class="sec-head" data-c="lead"><span class="k">Tools and methods</span><h2>What I use day to day</h2></div>
+      <div class="toolgrid">
+        <div class="tool" data-c="charac" data-d="charac"><h3>Characterization</h3><ul class="tags"><li>SEM</li><li>EDS</li><li>Optical microscopy</li><li>Metallography</li><li>XRD (X'Pert HighScore)</li><li>XRF</li><li>ICP-OES</li><li>NMR</li><li>UV-Vis</li></ul></div>
+        <div class="tool" data-c="metals" data-d="metals charac"><h3>Mechanical testing</h3><ul class="tags"><li>Wear (tribology)</li><li>Tensile</li><li>Compression</li><li>Hardness (Vickers, Brinell)</li><li>Fractography</li></ul></div>
+        <div class="tool" data-c="battery" data-d="metals coatings battery"><h3>Process</h3><ul class="tags"><li>Casting</li><li>Stir casting</li><li>Heat treatment</li><li>Coating formulation</li><li>Ball milling</li><li>Leaching</li><li>DES formulation</li><li>DOE</li><li>Root cause analysis</li></ul></div>
+        <div class="tool" data-c="lab" data-d="lab"><h3>Design</h3><ul class="tags"><li>SolidWorks</li><li>AutoCAD</li><li>Technical drawing</li><li>ZBrush</li><li>FDM 3D printing</li><li>Fixture and mold design</li></ul></div>
+        <div class="tool" data-c="lead" data-d="lead"><h3>Software</h3><ul class="tags"><li>Excel</li><li>Microsoft Office</li><li>PowerPoint (advanced)</li><li>C++ (coursework)</li><li>MATLAB (certified)</li></ul></div>
+        <div class="tool" data-c="coatings"><h3>Languages</h3><ul class="tags"><li>English C1 (TOEFL iBT 97)</li><li>Italian A2 (learning B1)</li><li>Persian (native)</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="alt">
+    <div class="wrap">
+      <div class="sec-head" data-c="metals"><span class="k">Education</span><h2>Degrees</h2></div>
+      <div class="edu">
+        <article class="degree" data-c="battery">
+          <span class="lvl">M.Sc.</span>
+          <h3>Materials Engineering and Nanotechnology</h3>
+          <p class="org">Politecnico di Milano, Italy · Taught in English</p>
+          <ul class="pts"><li>Thesis: Mechanochemical recovery of valuable materials from spent Li-ion batteries (FluoriTech Lab).</li></ul>
+          <div class="courses"><span class="k">Coursework</span><ul class="tags"><li>Lithium Batteries and Beyond</li><li>Surface Technology</li><li>Corrosion Engineering</li><li>Principles of Polymer Chemistry</li><li>Advanced Materials</li><li>Lab of Bio-Nanomaterials</li><li>Instrumental Methods for Materials Analysis</li><li>Mathematical Methods for Materials Eng.</li></ul></div>
+        </article>
+        <article class="degree" data-c="metals">
+          <span class="lvl">B.Sc.</span>
+          <h3>Materials and Metallurgical Engineering</h3>
+          <p class="org">University of Tehran, Iran · Top 15 in program (2023) · Full scholarship</p>
+          <ul class="pts">
+            <li>Thesis: Effects of SiC addition on the structure and wear properties of ZW31 magnesium alloy.</li>
+            <li>Top 1.5% in the Iranian National University Entrance Exam (144,000 participants).</li>
+          </ul>
+          <div class="courses"><span class="k">Coursework</span><ul class="tags"><li>Physical Metallurgy I and II</li><li>Mechanical Properties I and II</li><li>Heat Treatment</li><li>Casting</li><li>Pyrometallurgy</li><li>Hydrometallurgy</li><li>Ceramics</li><li>Composite Materials</li><li>Corrosion and Oxidation</li><li>Non-Destructive Testing</li><li>Methods of Material Analysis</li></ul></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-band">
+    <div class="wrap">
+      <div class="sec-head"><span class="k">Contact</span><h2>Let's talk about your project</h2></div>
+      <div class="contact">
+        <div class="card" data-c="metals">
+          <span class="k">Email</span>
+          <span class="v" id="email">sina.pourbahari@mail.polimi.it</span>
+          <div class="acts">
+            <a class="linkbtn" href="mailto:sina.pourbahari@mail.polimi.it">Write an email</a>
+            <button class="linkbtn" type="button" data-copy="email">Copy address</button>
+          </div>
+        </div>
+        <div class="card" data-c="coatings">
+          <span class="k">Personal email</span>
+          <span class="v" id="email2">sinapourbahari19@gmail.com</span>
+          <div class="acts">
+            <a class="linkbtn" href="mailto:sinapourbahari19@gmail.com">Write an email</a>
+            <button class="linkbtn" type="button" data-copy="email2">Copy address</button>
+          </div>
+        </div>
+        <div class="card" data-c="lab">
+          <span class="k">LinkedIn and CV</span>
+          <span class="v">Full profile and one-page CV</span>
+          <div class="acts">
+            <a class="linkbtn" href="https://www.linkedin.com/in/sina-pourbahari-490498215" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="linkbtn" href="Sina_Pourbahari_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Sina Pourbahari</span><span>Milan, Italy</span></div>
+</footer>
+
+<div class="focusbar" id="focusbar" hidden><i aria-hidden="true"></i><span id="focustext">Highlighting</span><button type="button" id="focusclear">Show all</button></div>
+
+<script>
+(function(){
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* copy buttons */
+  document.querySelectorAll('[data-copy]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var el=document.getElementById(btn.getAttribute('data-copy'));
+      if(!el) return;
+      var text=el.textContent.trim();
+      function selectIt(){
+        var r=document.createRange(); r.selectNodeContents(el);
+        var s=window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        btn.textContent='Selected, press Ctrl+C';
+      }
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(function(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy address';},1800);},selectIt);
+      } else { selectIt(); }
+    });
+  });
+
+  /* scroll progress (temper bar) */
+  var prog=document.getElementById('progress'), ticking=false;
+  function updProg(){
+    ticking=false;
+    var h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    prog.style.transform='scaleX('+(max>0?Math.min(1,h.scrollTop/max):0)+')';
+  }
+  window.addEventListener('scroll',function(){ if(!ticking){ticking=true;requestAnimationFrame(updProg);} },{passive:true});
+  updProg();
+
+  /* microstructure renderer */
+  function hex(v,fallback){
+    v=(v||'').trim();
+    var m=/^#([0-9a-f]{6})$/i.exec(v);
+    if(!m) return fallback;
+    var n=parseInt(m[1],16); return [n>>16&255,n>>8&255,n&255];
+  }
+  var TINT=['#e9cf86','#d39a3c','#a35f2a','#7b3d97','#3a4fae','#5c95d8','#2f7f8a','#b4486e'].map(function(h){return hex(h,[128,128,128]);});
+  function colors(){
+    var cs=getComputedStyle(document.documentElement);
+    return {
+      g1:hex(cs.getPropertyValue('--grain-1'),[185,194,209]),
+      g2:hex(cs.getPropertyValue('--grain-2'),[238,241,246]),
+      gb:hex(cs.getPropertyValue('--gb'),[31,39,53]),
+      melt:hex(cs.getPropertyValue('--melt'),[247,217,168]),
+      p:hex(cs.getPropertyValue('--particle'),[45,54,70])
+    };
+  }
+  function rand(seed){ return function(){ seed=(seed*1664525+1013904223)>>>0; return seed/4294967296; }; }
+
+  function Micro(canvas,base){
+    var ctx=canvas.getContext('2d');
+    var W=canvas.width,H=canvas.height,N=W*H, opt=base;
+    var owner=new Int16Array(N), d1=new Float32Array(N), edge=new Uint8Array(N), noise=new Int8Array(N);
+    var nuclei=[], shade=[], delay=[], parts=[], maxD=0, img=ctx.createImageData(W,H), raf=0, current=Infinity;
+    function build(seed){
+      var r=rand(seed);
+      nuclei=[]; var tries=0, minD=opt.spacing;
+      while(nuclei.length<opt.count&&tries<6000){
+        tries++;
+        var x=r()*W,y=r()*H,ok=true;
+        for(var i=0;i<nuclei.length;i++){var dx=nuclei[i][0]-x,dy=nuclei[i][1]-y;if(dx*dx+dy*dy<minD*minD){ok=false;break;}}
+        if(ok) nuclei.push([x,y]);
+      }
+      shade=nuclei.map(function(){return r();});
+      delay=nuclei.map(function(){return r()*opt.stagger;});
+      maxD=0;
+      for(var p=0;p<N;p++){
+        var px=p%W, py=(p/W)|0, b1=1e9,b2=1e9,o=0;
+        for(var k=0;k<nuclei.length;k++){
+          var ex=nuclei[k][0]-px, ey=nuclei[k][1]-py, d=ex*ex+ey*ey;
+          if(d<b1){b2=b1;b1=d;o=k;} else if(d<b2){b2=d;}
+        }
+        b1=Math.sqrt(b1); b2=Math.sqrt(b2);
+        owner[p]=o; d1[p]=b1; edge[p]=(b2-b1)<opt.gbw?1:0;
+        noise[p]=((r()*10)|0)-5;
+        var t=b1+delay[o]; if(t>maxD) maxD=t;
+      }
+      parts=[];
+      if(opt.particles){
+        var placed=0,guard=0;
+        while(placed<opt.particles&&guard<30000){
+          guard++;
+          var qx=(r()*W)|0, qy=(r()*H)|0, q=qy*W+qx;
+          if(!edge[q]&&r()>0.25) continue;
+          parts.push([qx,qy,opt.psize*(0.6+r()*0.8),r()*Math.PI,0.55+r()*0.45]);
+          placed++;
+        }
+      }
+    }
+    function paint(front){
+      var c=colors(), data=img.data, tint=!!opt.tint;
+      for(var p=0;p<N;p++){
+        var o=owner[p], i=p*4, R,G,B;
+        if(d1[p]+delay[o]>front){ R=c.melt[0];G=c.melt[1];B=c.melt[2]; }
+        else if(edge[p]){ R=c.gb[0];G=c.gb[1];B=c.gb[2]; }
+        else if(tint){
+          var tc=TINT[(shade[o]*TINT.length)|0], n2=noise[p]*1.5;
+          R=tc[0]+n2;G=tc[1]+n2;B=tc[2]+n2;
+        } else {
+          var s=shade[o], n=noise[p];
+          R=c.g1[0]+(c.g2[0]-c.g1[0])*s+n; G=c.g1[1]+(c.g2[1]-c.g1[1])*s+n; B=c.g1[2]+(c.g2[2]-c.g1[2])*s+n;
+        }
+        data[i]=R;data[i+1]=G;data[i+2]=B;data[i+3]=255;
+      }
+      ctx.putImageData(img,0,0);
+      if(parts.length&&front>=maxD){
+        ctx.fillStyle='rgb('+c.p.join(',')+')';
+        parts.forEach(function(q){
+          ctx.save(); ctx.translate(q[0],q[1]); ctx.rotate(q[3]);
+          ctx.beginPath(); ctx.moveTo(-q[2],0); ctx.lineTo(-q[2]*0.3,-q[2]*q[4]); ctx.lineTo(q[2]*0.8,-q[2]*0.4*q[4]); ctx.lineTo(q[2],q[2]*0.3); ctx.lineTo(0,q[2]*q[4]); ctx.closePath(); ctx.fill();
+          ctx.restore();
+        });
+      }
+    }
+    function play(){
+      cancelAnimationFrame(raf);
+      if(reduce||!opt.animate){ current=Infinity; paint(Infinity); return; }
+      var start=performance.now(), dur=opt.duration;
+      function step(now){
+        var t=Math.min((now-start)/dur,1), e=1-Math.pow(1-t,2);
+        current=t>=1?Infinity:e*maxD;
+        paint(current);
+        if(t<1) raf=requestAnimationFrame(step);
+      }
+      raf=requestAnimationFrame(step);
+    }
+    this.reset=function(seed,over){ opt=Object.assign({},base,over||{}); build(seed); play(); };
+    this.repaint=function(){ paint(current); };
+    build(base.seed); play();
+  }
+
+  var micros=[];
+  var heroCanvas=document.getElementById('hero-micro');
+  if(heroCanvas){
+    var BASE={count:38,spacing:48,gbw:2.2,stagger:70,animate:true,duration:2600,seed:20270201,psize:9};
+    var MODES={
+      bright:{opt:{},cap:'Bright field: grains nucleate and grow as the melt solidifies. Schematic.'},
+      tint:{opt:{tint:true},cap:'Color etch: tint etchants colour each grain by its crystal orientation. Schematic.'},
+      annealed:{opt:{count:13,spacing:100,gbw:2.6,stagger:40},cap:'Annealed: grains grow and coarsen during heat treatment. Schematic.'},
+      reinforced:{opt:{count:30,spacing:56,particles:95},cap:'Reinforced: ceramic particles in a metal matrix, as in my Mg composites. Schematic.'}
+    };
+    var hm=new Micro(heroCanvas,BASE), mode='bright', cap=document.getElementById('micro-cap');
+    micros.push(hm);
+    function setMode(m){
+      mode=m;
+      document.querySelectorAll('.mode').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.mode===m?'true':'false'); });
+      cap.textContent=MODES[m].cap;
+      hm.reset((Math.random()*1e9)>>>0, MODES[m].opt);
+    }
+    document.querySelectorAll('.mode').forEach(function(b){ b.addEventListener('click',function(){ setMode(b.dataset.mode); }); });
+    document.getElementById('replay').addEventListener('click',function(){ setMode(mode); });
+  }
+  var mmc=document.getElementById('mmc-micro');
+  if(mmc){ micros.push(new Micro(mmc,{count:26,spacing:62,gbw:2,stagger:0,animate:false,seed:91,particles:70,psize:7})); }
+  function repaintAll(){ micros.forEach(function(m){ m.repaint(); }); }
+  if(window.matchMedia){
+    var mq=window.matchMedia('(prefers-color-scheme: dark)');
+    if(mq.addEventListener) mq.addEventListener('change',repaintAll); else if(mq.addListener) mq.addListener(repaintAll);
+  }
+  new MutationObserver(repaintAll).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+
+  /* periodic table */
+  var SYM='H He Li Be B C N O F Ne Na Mg Al Si P S Cl Ar K Ca Sc Ti V Cr Mn Fe Co Ni Cu Zn Ga Ge As Se Br Kr Rb Sr Y Zr Nb Mo Tc Ru Rh Pd Ag Cd In Sn Sb Te I Xe Cs Ba La Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu Hf Ta W Re Os Ir Pt Au Hg Tl Pb Bi Po At Rn Fr Ra Ac Th Pa U Np Pu Am Cm Bk Cf Es Fm Md No Lr Rf Db Sg Bh Hs Mt Ds Rg Cn Nh Fl Mc Lv Ts Og'.split(' ');
+  var AREA={battery:'Battery materials',metals:'Metals and alloys',lab:'Lab engineering'};
+  var WORK={
+    Li:{d:'battery',n:'Lithium',m:'6.94',t:'Leached from spent NMC and LCO cathodes at room temperature, about 70% recovery.'},
+    Co:{d:'battery',n:'Cobalt',m:'58.93',t:'Leached from spent cathodes with a food-grade NADES, about 50% recovery.'},
+    Ni:{d:'battery',n:'Nickel',m:'58.69',t:'One of the three transition metals in the NMC cathodes I processed.'},
+    Mn:{d:'battery',n:'Manganese',m:'54.94',t:'One of the three transition metals in the NMC cathodes I processed.'},
+    Al:{d:'metals',n:'Aluminium',m:'26.98',t:'Main alloying element in AZ91, and the contaminant in the real industrial cathode scrap I validated on.'},
+    Mg:{d:'metals',n:'Magnesium',m:'24.31',t:'Base metal of the ZW31 and AZ91 alloys and composites I cast and tested, 200+ tests.'},
+    Zn:{d:'metals',n:'Zinc',m:'65.38',t:'Alloying element in both ZW31 and AZ91 magnesium alloys.'},
+    Y:{d:'metals',n:'Yttrium',m:'88.91',t:'The W in ZW31: a Mg-Zn-Y alloy I reinforced with SiC for my B.Sc. thesis.'},
+    Si:{d:'metals',n:'Silicon',m:'28.09',t:'In the SiC particles I added to ZW31 to study wear resistance.'},
+    C:{d:'metals',n:'Carbon',m:'12.01',t:'In the SiC and B4C ceramic reinforcements of my magnesium composites.'},
+    B:{d:'metals',n:'Boron',m:'10.81',t:'In the B4C particles I stir cast into AZ91 magnesium alloy.'},
+    Cu:{d:'metals',n:'Copper',m:'63.55',t:'Studied how heat treatment changes its hardness and electrical conductivity during my internship.'},
+    F:{d:'lab',n:'Fluorine',m:'19.00',t:'Handled through the fluorine gas station and vacuum line I co-engineered at FluoriTech Lab.'}
+  };
+  function pos(z){
+    if(z===1) return [1,1]; if(z===2) return [1,18];
+    if(z<=4) return [2,z-2]; if(z<=10) return [2,z+8];
+    if(z<=12) return [3,z-10]; if(z<=18) return [3,z];
+    if(z<=36) return [4,z-18]; if(z<=54) return [5,z-36];
+    if(z<=56) return [6,z-54]; if(z===57) return [6,3]; if(z<=71) return null; if(z<=86) return [6,z-68];
+    if(z<=88) return [7,z-86]; if(z===89) return [7,3]; if(z<=103) return null; return [7,z-100];
+  }
+  var pt=document.getElementById('ptable'), card=document.getElementById('ptcard');
+  function select(sym,btn){
+    var w=WORK[sym]; if(!w) return;
+    pt.querySelectorAll('button.cell').forEach(function(b){ b.setAttribute('aria-pressed', b===btn?'true':'false'); });
+    card.setAttribute('data-c',w.d);
+    document.getElementById('pt-z').textContent=SYM.indexOf(sym)+1;
+    document.getElementById('pt-sym').textContent=sym;
+    document.getElementById('pt-m').textContent=w.m;
+    document.getElementById('pt-name').textContent=w.n;
+    document.getElementById('pt-area').textContent=AREA[w.d];
+    document.getElementById('pt-note').textContent=w.t;
+  }
+  if(pt){
+    SYM.forEach(function(s,i){
+      var z=i+1, p=pos(z); if(!p) return;
+      var w=WORK[s], el;
+      if(w){
+        el=document.createElement('button'); el.type='button'; el.className='cell';
+        el.setAttribute('data-c',w.d); el.setAttribute('data-d',w.d);
+        el.setAttribute('aria-label',w.n); el.setAttribute('aria-pressed','false');
+        el.innerHTML='<small>'+z+'</small>'+s;
+        el.addEventListener('click',function(){ select(s,el); });
+        el.addEventListener('mouseenter',function(){ select(s,el); });
+        el.addEventListener('focus',function(){ select(s,el); });
+      } else {
+        el=document.createElement('span'); el.className='cell'; el.textContent=s; el.setAttribute('aria-hidden','true');
+      }
+      el.style.gridRow=p[0]; el.style.gridColumn=p[1];
+      pt.appendChild(el);
+    });
+    var li=pt.querySelector('button[aria-label="Lithium"]'); if(li) select('Li',li);
+  }
+
+  /* area focus */
+  var NAMES={metals:'Metals and alloys',coatings:'Coatings and surfaces',battery:'Battery materials',charac:'Testing and characterization',lab:'Lab engineering and design',lead:'Project leadership'};
+  var bar=document.getElementById('focusbar'), active=null;
+  function focusArea(d,scroll){
+    active=(d===active)?null:d;
+    document.querySelectorAll('[data-d]').forEach(function(el){
+      var list=el.getAttribute('data-d').split(' ');
+      el.classList.toggle('dim', !!active && list.indexOf(active)<0);
+    });
+    document.querySelectorAll('.domain').forEach(function(el){ el.classList.toggle('on', el.getAttribute('data-d')===active); });
+    document.querySelectorAll('.show').forEach(function(b){ b.firstChild.nodeValue=(b.dataset.focus===active?'Highlighting, tap to clear ':'Highlight this work '); });
+    if(active){
+      bar.setAttribute('data-c',active);
+      document.getElementById('focustext').textContent='Highlighting: '+NAMES[active];
+      bar.hidden=false;
+      if(scroll) document.getElementById('projects').scrollIntoView({behavior:reduce?'auto':'smooth'});
+    } else { bar.hidden=true; }
+  }
+  document.querySelectorAll('.show').forEach(function(b){ b.addEventListener('click',function(){ focusArea(b.dataset.focus,true); }); });
+  document.getElementById('focusclear').addEventListener('click',function(){ focusArea(active,false); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&active) focusArea(active,false); });
+})();
+</script>
+
+</body></html>
